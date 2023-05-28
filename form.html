@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body{
+        background:rgb(34,193,195);
+        background-image: linear-gradient( yellow);
+        background-attachment: fixed;
+        margin: 0;
+        font-family: 'poppins',sans-serif;
+    }
+    #myform{
+        width: 400px;
+        margin: 20vh auto 0 auto;
+        background-color: whitesmoke;
+        border-radius: 5px;
+        padding: 30px
+    }
+</style>
+
+</head>
+<body>
+    <h1>HTML CSS AND DOM FORMS</h1>
+    <script> function myfunction() {
+
+        var x = document.getElementById("myform").elements;
+        var para = x[0].value;
+        for (var i = 0; i < x.length; i++) {
+            para = para.concat(x[i].value);
+        }
+    
+        document.getElementById("demo").innerHTML = para;
+    }</script>
+   
+    <form id="myform">
+        firstname<input type="textbox" name="firstname">
+            <div>lastname<input type="textbox" name="lastname"></div>
+            <div>address<input type="textbox" name="address"></div>
+        <div>pincode <input type="textbox" name="pincode"></div>
+        <div> state <input type="textbox" name="state"> </div>
+        <div>counrty  <input type="textbox" name="country"></div>
+       <div>gender <input type="radio" checked id="male" name="gender" value="Male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label></div><div>
+        food<select name="food" id="food">
+             <option value="idli">idli</option>
+             <option value="poori">poori</option>
+             <option value="dose">dose</option>
+             <option value="pongal">pongal</option>
+             <option value="parotta">parotta</option>
+        </select></div>
+        <button type="button" onclick="myfunction()"> Click me</button>
+    </form>
+    <p id="demo"></p>
+</body>
+</html>
